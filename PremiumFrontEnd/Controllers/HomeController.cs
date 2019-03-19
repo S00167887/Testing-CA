@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
 
-namespace NUnit_WhiteBox_Tests
+namespace PremiumFrontEnd.Controllers
 {
-    public class Program
+    public class HomeController : Controller
     {
-        static void Main(string[] args)
+        public ActionResult Index()
         {
-            // Console.ReadKey();
+            return View();
         }
-        public float CalcPremium(int age, string gender)
+
+        [HttpPost]
+        public ActionResult Index(string gender, int age)
         {
-            float premium;
+            float premium = 0;
 
             if (gender == "female")
             {
@@ -42,8 +44,22 @@ namespace NUnit_WhiteBox_Tests
 
             if (age >= 50)
                 premium = premium * 0.5f;
+            ViewBag.Result = premium;
+            return View();
+        }
 
-            return premium;
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
         }
     }
 }

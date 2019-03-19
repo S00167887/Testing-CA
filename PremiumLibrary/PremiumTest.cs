@@ -3,18 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using fit;
+using fit.Fixtures;
 
-namespace NUnit_WhiteBox_Tests
+namespace PremiumLibrary
 {
-    public class Program
+    public class PremiumTest : ColumnFixture
     {
-        static void Main(string[] args)
+        public string gender;
+        public int age;
+        public float premium;
+        public Premium p = new Premium();
+
+        public float CalcPremium()
         {
-            // Console.ReadKey();
+            p.setProperties(gender, age);
+            premium = p.CalcPremium();
+            return premium;
         }
-        public float CalcPremium(int age, string gender)
+    }
+    public class Premium
+    {
+        private string gender;
+        private int age;
+        private float premium;
+
+        public void setProperties(string gen, int a)
         {
-            float premium;
+            gender = gen;
+            age = a;
+        }
+
+        public float CalcPremium()
+        {
 
             if (gender == "female")
             {
@@ -26,13 +47,12 @@ namespace NUnit_WhiteBox_Tests
                 else
                     premium = 0.0f;
             }
-
             else if (gender == "male")
             {
                 if ((age >= 18) && (age <= 35))
                     premium = 6.0f;
                 else
-                    if (age >= 36)
+                     if (age >= 36)
                     premium = 5.0f;
                 else
                     premium = 0.0f;
@@ -42,7 +62,6 @@ namespace NUnit_WhiteBox_Tests
 
             if (age >= 50)
                 premium = premium * 0.5f;
-
             return premium;
         }
     }

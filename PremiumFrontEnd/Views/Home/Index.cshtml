@@ -1,0 +1,26 @@
+﻿@{              
+                ViewBag.Title = "Index";
+}
+
+<div align="center">
+    <h2>Calculate your Insurance Premium</h2> @using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <th> Gender </th>
+                <td> <input type="text" id="gender" name="gender" class="form-control" /> </td>
+            </tr>
+            <tr>
+                <th> Age </th>
+                <td> <input type="text" id="age" name="age" class="form-control" /> </td>
+            </tr>
+            <tr>
+                <th><input type="submit" name="Cal" value="Calculate" class="btn btn-primary" /></th>
+
+            </tr>
+            <tr>
+                <th>Result</th>
+                <td><input type="text" class="form-control" value="@ViewBag.Result" /> </td>
+            </tr>
+        </table>}
+</div>
