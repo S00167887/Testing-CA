@@ -40,7 +40,7 @@ namespace SeleniumTests
         }
 
         [Test]
-        public void TheUntitledTestCaseTest()
+        public void Test1()
         {
             driver.Navigate().GoToUrl("http://localhost:59486/");
             driver.FindElement(By.Id("gender")).Click();
@@ -60,6 +60,95 @@ namespace SeleniumTests
                 verificationErrors.Append(e.Message);
             }
         }
+
+        [Test]
+        public void Test2()
+        {
+            driver.Navigate().GoToUrl("http://localhost:59486/");
+            driver.FindElement(By.Id("gender")).Click();
+            driver.FindElement(By.Id("gender")).Clear();
+            driver.FindElement(By.Id("gender")).SendKeys("male");
+            driver.FindElement(By.Id("age")).Click();
+            driver.FindElement(By.Id("age")).Clear();
+            driver.FindElement(By.Id("age")).SendKeys("29");
+            driver.FindElement(By.Name("Cal")).Click();
+            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Result'])[1]/following::input[1]")).Click();
+            try
+            {
+                Assert.AreEqual("6", driver.FindElement(By.XPath("//input[@value='6']")).GetAttribute("value"));
+            }
+            catch (AssertionException e)
+            {
+                verificationErrors.Append(e.Message);
+            }
+        }
+
+        [Test]
+        public void Test3()
+        {
+            driver.Navigate().GoToUrl("http://localhost:59486/");
+            driver.FindElement(By.Id("gender")).Click();
+            driver.FindElement(By.Id("gender")).Clear();
+            driver.FindElement(By.Id("gender")).SendKeys("female");
+            driver.FindElement(By.Id("age")).Click();
+            driver.FindElement(By.Id("age")).Clear();
+            driver.FindElement(By.Id("age")).SendKeys("16");
+            driver.FindElement(By.Name("Cal")).Click();
+            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Result'])[1]/following::input[1]")).Click();
+            try
+            {
+                Assert.AreEqual("0", driver.FindElement(By.XPath("//input[@value='0']")).GetAttribute("value"));
+            }
+            catch (AssertionException e)
+            {
+                verificationErrors.Append(e.Message);
+            }
+        }
+
+        [Test]
+        public void Test4()
+        {
+            driver.Navigate().GoToUrl("http://localhost:59486/");
+            driver.FindElement(By.Id("gender")).Click();
+            driver.FindElement(By.Id("gender")).Clear();
+            driver.FindElement(By.Id("gender")).SendKeys("male");
+            driver.FindElement(By.Id("age")).Click();
+            driver.FindElement(By.Id("age")).Clear();
+            driver.FindElement(By.Id("age")).SendKeys("50");
+            driver.FindElement(By.Name("Cal")).Click();
+            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Result'])[1]/following::input[1]")).Click();
+            try
+            {
+                Assert.AreEqual("2.5", driver.FindElement(By.XPath("//input[@value='2.5']")).GetAttribute("value"));
+            }
+            catch (AssertionException e)
+            {
+                verificationErrors.Append(e.Message);
+            }
+        }
+
+        [Test]
+        public void Test5()
+        {
+            driver.Navigate().GoToUrl("http://localhost:59486/");
+            driver.FindElement(By.Id("gender")).Click();
+            driver.FindElement(By.Id("gender")).Clear();
+            driver.FindElement(By.Id("gender")).SendKeys("female");
+            driver.FindElement(By.Id("age")).Click();
+            driver.FindElement(By.Id("age")).Clear();
+            driver.FindElement(By.Id("age")).SendKeys("70");
+            driver.FindElement(By.Name("Cal")).Click();
+            driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Result'])[1]/following::input[1]")).Click();
+            try
+            {
+                Assert.AreEqual("1.75", driver.FindElement(By.XPath("//input[@value='1.75']")).GetAttribute("value"));
+            }
+            catch (AssertionException e)
+            {
+                verificationErrors.Append(e.Message);
+            }
+        }
+
         private bool IsElementPresent(By by)
         {
             try
