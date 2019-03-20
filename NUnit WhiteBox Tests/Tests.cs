@@ -14,7 +14,7 @@ namespace NUnit_WhiteBox_Tests
         [SetUp]
         public void Initialise()
         {
-            sut = new Program();
+            sut = new Program(); 
         }
         //[Test]
         //public void Test_CalcPremium_1()

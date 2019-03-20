@@ -12,7 +12,7 @@ namespace PremiumLibrary
     {
         public string gender;
         public int age;
-        public float premium;
+        public float premium; 
         public Premium p = new Premium();
 
         public float CalcPremium()

@@ -1,0 +1,35 @@
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer,dotnet2\fit.dll %p}
+!define TEST_RUNNER {dotnet2\Runner.exe}
+# this is the path to the fixture code
+!path C:\Users\hp\source\repos\Testing CA\PremiumLibrary\bin\Debug\PremiumLibrary.dll
+#namespace.class that fixture is in
+#boundary tests and ec tests
+!|  PremiumLibrary.PremiumTest|
+| gender| age| CalcPremium? |
+| female | -2 | 0.0 |
+| male | 13 | 0.0 |
+| female | 28 | 5.0 |
+| female | 39 | 3.5 |
+| male | 29 | 6.0 |
+| male | 40 | 5.0 |
+| male | 58 | 2.5 |
+| male | -1 | 0.0 |
+| female | 0 | 0.0 |
+| male | 1 | 0.0 |
+| female | 16 | 0.0 |
+| male | 17 | 0.0 |
+| female | 18 | 5.0 |
+| male | 19 | 6.0 |
+| female | 29 | 5.0 |
+| female | 30 | 5.0 |
+| female | 31 | 3.5 |
+| female | 32 | 3.5 |
+| female | 48 | 3.5 |
+| female | 49 | 3.5 |
+| female | 50 | 1.75 |
+| male | 34 | 6.0 |
+| male | 35 | 6.0 |
+| male | 36 | 5.0 |
+| male | 37 | 5.0 |
+| male | 38 | 5.0 |
+| male | 50 | 2.5 |
